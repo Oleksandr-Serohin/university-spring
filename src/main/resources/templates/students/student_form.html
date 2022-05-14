@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Save student</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Create New Student </h1>
+            <div class="card-body">
+                <form th:action="@{/students/save}"
+                      th:object="${student}" method="POST">
+                    <input type="hidden" th:field="*{id}"/>
+
+                    <input type="text" th:field="*{firstName}"
+                           class="form-control mb-4 col-4" placeholder="First name">
+
+                    <input type="text" th:field="*{lastName}"
+                           class="form-control mb-4 col-4" placeholder="Last name">
+
+                    <input type="text" th:field="*{email}"
+                           class="form-control mb-4 col-4" placeholder="Email">
+
+                    <input type="text" th:field="*{courses}"
+                           class="form-control mb-4 col-4" placeholder="courses">
+
+                    <input type="text" th:field="*{group}"
+                           class="form-control mb-4 col-4" placeholder="group">
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-info col-2">
+                            Save
+                        </button>
+                    </div>
+                </form>
+
+                <hr>
+                <a th:href="@{/students/list}">Back to Students List</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

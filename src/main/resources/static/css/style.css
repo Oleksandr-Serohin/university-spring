@@ -1,0 +1,16 @@
+.ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.flex-parent {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+button.margin-right {
+    margin-right: 20px;
+}
